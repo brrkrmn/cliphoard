@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "ClipHoard",
+  "description": "Quickly stash and access your most-used data",
+  "version": "1.0",
+  "action": {
+    "default_popup": "./src/popup/popup.html"
+  }
+}
