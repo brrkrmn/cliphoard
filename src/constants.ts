@@ -1,0 +1,1 @@
+export const sectionStyles = "w-full rounded-xl p-2 shadow-sm bg-background-white flex items-center justify-start"

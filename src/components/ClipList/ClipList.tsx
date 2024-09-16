@@ -1,3 +1,4 @@
+import { sectionStyles } from "../../constants"
 import Clip, { ClipValue } from "../Clip/Clip"
 
 const ClipList = () => {
@@ -19,7 +20,7 @@ const ClipList = () => {
 
   ]
   return (
-    <div className="shadow-sm overflow-scroll flex flex-col items-center justify-start bg-background-white rounded-xl px-2 py-4 gap-3">
+    <div className={`${sectionStyles} overflow-scroll flex-col py-4 gap-3`}>
       {list.map((clip, index) => (
         <Clip clip={clip}/>
       ))}

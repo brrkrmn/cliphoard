@@ -1,3 +1,4 @@
+import { sectionStyles } from "../../../../constants"
 import { useAppContext } from "../../../../context"
 import { buttonStyles, inputStyles } from "./constants"
 
@@ -7,7 +8,7 @@ const ClipForm = () => {
   return (
     <form
       onSubmit={() => createClip(value)}
-      className="w-full flex flex-col items-center justify-start gap-2 bg-background-white rounded-md p-2 shadow-sm">
+      className={`${sectionStyles} flex-col gap-2`}>
       <div className="w-full flex items-center justify-between gap-4">
         <input
           type="text"
