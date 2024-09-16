@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { AppContextValue, OptionType, Step } from "./appProvider.types";
+import { AppContextValue, ClipFormValue, OptionType, Step } from "./appProvider.types";
 
 export const AppContext = createContext<AppContextValue>(null);
 
@@ -14,6 +14,26 @@ export const useAppContext = () => {
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [step, setStep] = useState<Step>("initial")
   const [selectedOptionType, setSelectedOptionType] = useState<OptionType | "">("");
+  const [value, setValue] = useState<ClipFormValue>({
+    title: '',
+    content: '',
+  })
+
+  const createClip = (value: ClipFormValue) => {
+    resetForm()
+  }
+
+  const resetForm = () => {
+    setStep("initial")
+  }
+
+  const updateTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue({ ...value, title: e.target.value })
+  }
+
+  const updateContent = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue({ ...value, content: e.target.value })
+  }
 
   return (
     <AppContext.Provider
@@ -22,6 +42,11 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         setSelectedOptionType,
         step,
         setStep,
+        createClip,
+        resetForm,
+        updateTitle,
+        updateContent,
+        value,
       }}
     >
       {children}

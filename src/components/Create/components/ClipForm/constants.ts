@@ -1,0 +1,2 @@
+export const inputStyles = "w-full h-10 pl-4 rounded-xl shadow-inner bg-background-gray transition-all hover:bg-background-sky focus:bg-background-sky outline-none"
+export const buttonStyles = "w-10 h-10 flex items-center justify-center flex-shrink-0 rounded-full transition hover:bg-background-gray"
