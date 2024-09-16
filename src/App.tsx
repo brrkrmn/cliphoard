@@ -9,8 +9,8 @@ const App = () => {
   const { getClips } = useClipContext();
 
   useEffect(() => {
-    getClips
-  })
+    getClips()
+  }, [])
 
   return (
     <div className="w-full h-full p-4 flex flex-col gap-4 bg-background-gray">

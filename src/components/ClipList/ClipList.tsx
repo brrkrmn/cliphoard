@@ -20,7 +20,7 @@ const ClipList = () => {
     return (
       <div className={`${sectionStyles} overflow-scroll flex-col py-4 gap-3`}>
         {clips.map((clip) => (
-          <ClipCard clip={clip}/>
+          <ClipCard key={clip.id} clip={clip}/>
         ))}
       </div>
     )

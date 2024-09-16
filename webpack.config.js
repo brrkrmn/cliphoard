@@ -33,4 +33,6 @@ module.exports = {
     ],
   },
   watch: true,
+  mode: 'development',
+  devtool: 'source-map',
 };

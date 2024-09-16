@@ -21,11 +21,20 @@ const ClipProvider = ({ children }: { children: React.ReactNode }) => {
     })
   }
 
+  const addClipToDB = (clip: Clip) => {
+    const newClips = [...clips, clip]
+    chrome.storage.local.set({ clips: newClips }, () => {
+      console.log(clips)
+      getClips()
+    })
+  }
+
   return (
     <ClipContext.Provider
       value={{
         clips,
         getClips,
+        addClipToDB,
       }}
     >
       {children}

@@ -3,6 +3,7 @@ import { Variant } from "../CreateClip/CreateClipProvider.types";
 export type ClipContextValue = null | {
   clips: Clip[];
   getClips: () => void;
+  addClipToDB: (clip: Clip) => void;
 }
 
 export type Clip = {

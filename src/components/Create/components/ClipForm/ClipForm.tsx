@@ -5,9 +5,14 @@ import { buttonStyles, inputStyles } from "./constants"
 const ClipForm = () => {
   const { createClip, resetForm, value, onContentChange, onTitleChange } = useCreateClipContext()
 
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    createClip(value)
+  }
+
   return (
     <form
-      onSubmit={() => createClip(value)}
+      onSubmit={onSubmit}
       className={`${sectionStyles} flex-col gap-2`}>
       <div className="w-full flex items-center justify-between gap-4">
         <input
