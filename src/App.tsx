@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 
 const App = () => {
   return (
-    <div className="w-full h-full p-4 flex flex-col gap-2 bg-background-gray">
+    <div className="w-full h-full p-4 flex flex-col gap-4 bg-background-gray">
       <Header />
       <Create />
       <ClipList />

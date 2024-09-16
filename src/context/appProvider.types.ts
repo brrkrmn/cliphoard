@@ -16,4 +16,4 @@ export type Option = {
   inputType: "text" | "password" | "url"
 }
 
-export type Step = "" | "select-option" | "fill-input"
+export type Step = "initial" | "option" | "input"

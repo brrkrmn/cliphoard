@@ -12,7 +12,7 @@ export const useAppContext = () => {
 };
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  const [step, setStep] = useState<Step>("")
+  const [step, setStep] = useState<Step>("initial")
   const [selectedOptionType, setSelectedOptionType] = useState<OptionType | "">("");
 
   return (
