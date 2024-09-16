@@ -1,4 +1,4 @@
-import { useAppContext } from "../../context";
+import { useAppContext } from "../../context/CreateClip";
 import ClipForm from "./components/ClipForm/ClipForm";
 import CreateButton from "./components/CreateButton/CreateButton";
 import OptionList from "./components/OptionList/OptionList";

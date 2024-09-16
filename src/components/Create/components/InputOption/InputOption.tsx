@@ -1,5 +1,5 @@
-import { useAppContext } from "../../../../context";
-import { Option } from "../../../../context/appProvider.types";
+import { useAppContext } from "../../../../context/CreateClip";
+import { Option } from "../../../../context/CreateClip/CreateClipProvider.types";
 
 const InputOption = ({ option }: { option: Option }) => {
   const { setSelectedOptionType, setStep } = useAppContext()

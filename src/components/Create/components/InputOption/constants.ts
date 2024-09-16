@@ -1,4 +1,4 @@
-import { Option } from "../../../../context/appProvider.types";
+import { Option } from "../../../../context/CreateClip/CreateClipProvider.types";
 
 export const inputOptions: Option[] = [
   {

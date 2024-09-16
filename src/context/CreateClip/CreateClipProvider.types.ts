@@ -1,4 +1,4 @@
-export type AppContextValue = null | {
+export type CreateClipContextValue = null | {
   selectedOptionType: OptionType | "";
   setSelectedOptionType: (value: OptionType) => void;
   step: Step;

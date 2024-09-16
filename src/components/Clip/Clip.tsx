@@ -1,4 +1,4 @@
-import { OptionType } from "../../context/appProvider.types";
+import { OptionType } from "../../context/CreateClip/CreateClipProvider.types";
 
 export type ClipValue = {
   id: string;

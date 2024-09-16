@@ -1,17 +1,17 @@
 import { createContext, useContext, useState } from "react";
-import { AppContextValue, ClipFormValue, OptionType, Step } from "./appProvider.types";
+import { ClipFormValue, CreateClipContextValue, OptionType, Step } from "./CreateClipProvider.types";
 
-export const AppContext = createContext<AppContextValue>(null);
+export const CreateClipContext = createContext<CreateClipContextValue>(null);
 
 export const useAppContext = () => {
-  const context = useContext(AppContext);
+  const context = useContext(CreateClipContext);
   if (context === null) {
     throw new Error("You can only call this hook inside AppProvider");
   }
   return context;
 };
 
-const AppProvider = ({ children }: { children: React.ReactNode }) => {
+const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
   const [step, setStep] = useState<Step>("initial")
   const [selectedOptionType, setSelectedOptionType] = useState<OptionType | "">("");
   const [value, setValue] = useState<ClipFormValue>({
@@ -36,7 +36,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <AppContext.Provider
+    <CreateClipContext.Provider
       value={{
         selectedOptionType,
         setSelectedOptionType,
@@ -50,8 +50,8 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
       }}
     >
       {children}
-    </AppContext.Provider>
+    </CreateClipContext.Provider>
   );
 };
 
-export default AppProvider;
+export default CreateClipProvider;

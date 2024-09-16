@@ -1,5 +1,5 @@
 import { sectionStyles } from "../../../../constants"
-import { useAppContext } from "../../../../context"
+import { useAppContext } from "../../../../context/CreateClip"
 import { buttonStyles, inputStyles } from "./constants"
 
 const ClipForm = () => {
