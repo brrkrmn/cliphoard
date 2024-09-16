@@ -1,4 +1,5 @@
-import { createContext, useContext, useId, useState } from "react";
+import { createContext, useContext, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import { useClipContext } from "../Clip";
 import { Clip } from "../Clip/ClipProvider.types";
 import { CreateClipContextValue, CreateFormValue, Step, Variant } from "./CreateClipProvider.types";
@@ -16,7 +17,6 @@ export const useCreateClipContext = () => {
 const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
   const [step, setStep] = useState<Step>("initial")
   const [selectedVariant, setSelectedVariant] = useState<Variant>("text");
-  const id = useId();
   const [value, setValue] = useState<CreateFormValue>({
     title: '',
     content: '',
@@ -25,6 +25,7 @@ const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
 
 
   const createClip = (value: CreateFormValue) => {
+    const id = uuidv4();
     const clip: Clip = {
       id: id,
       title: value.title,
@@ -37,6 +38,7 @@ const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   const resetForm = () => {
+    setValue({ title: '', content: ''})
     setStep("initial")
   }
 
