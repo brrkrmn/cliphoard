@@ -1,19 +1,18 @@
 export type CreateClipContextValue = null | {
-  selectedOptionType: OptionType | "";
-  setSelectedOptionType: (value: OptionType) => void;
   step: Step;
+  value: CreateFormValue
+  setSelectedVariant: (value: Variant) => void;
   setStep: (value: Step) => void;
-  createClip: (value: ClipFormValue) => void;
+  createClip: (value: CreateFormValue) => void;
   resetForm: () => void;
-  updateTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  updateContent: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  value: ClipFormValue
+  onTitleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onContentChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export type OptionType = "text" | "password" | "url" | "code";
+export type Variant = "text" | "password" | "url" | "code";
 
-export type Option = {
-  type: OptionType;
+export type ClipVariant = {
+  type: Variant;
   borderStyle: string;
   textStyle: string;
   bgStyle: string
@@ -21,9 +20,9 @@ export type Option = {
   inputType: "text" | "password" | "url"
 }
 
-export type ClipFormValue = {
+export type CreateFormValue = {
   title: string;
   content: string;
 }
 
-export type Step = "initial" | "option" | "input"
+export type Step = "initial" | "select-variant" | "create-form"

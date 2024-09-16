@@ -1,25 +1,25 @@
 import { createContext, useContext, useState } from "react";
-import { ClipFormValue, CreateClipContextValue, OptionType, Step } from "./CreateClipProvider.types";
+import { CreateClipContextValue, CreateFormValue, Step, Variant } from "./CreateClipProvider.types";
 
 export const CreateClipContext = createContext<CreateClipContextValue>(null);
 
-export const useAppContext = () => {
+export const useCreateClipContext = () => {
   const context = useContext(CreateClipContext);
   if (context === null) {
-    throw new Error("You can only call this hook inside AppProvider");
+    throw new Error("You can only call this hook inside CreateClipProvider");
   }
   return context;
 };
 
 const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
   const [step, setStep] = useState<Step>("initial")
-  const [selectedOptionType, setSelectedOptionType] = useState<OptionType | "">("");
-  const [value, setValue] = useState<ClipFormValue>({
+  const [selectedVariant, setSelectedVariant] = useState<Variant | "">("");
+  const [value, setValue] = useState<CreateFormValue>({
     title: '',
     content: '',
   })
 
-  const createClip = (value: ClipFormValue) => {
+  const createClip = (value: CreateFormValue) => {
     resetForm()
   }
 
@@ -27,25 +27,24 @@ const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
     setStep("initial")
   }
 
-  const updateTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue({ ...value, title: e.target.value })
   }
 
-  const updateContent = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onContentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue({ ...value, content: e.target.value })
   }
 
   return (
     <CreateClipContext.Provider
       value={{
-        selectedOptionType,
-        setSelectedOptionType,
+        setSelectedVariant,
         step,
         setStep,
         createClip,
         resetForm,
-        updateTitle,
-        updateContent,
+        onTitleChange,
+        onContentChange,
         value,
       }}
     >

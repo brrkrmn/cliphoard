@@ -1,28 +1,29 @@
 import { sectionStyles } from "../../constants"
-import Clip, { ClipValue } from "../Clip/Clip"
+import { Clip } from "../../context/Clip/ClipProvider.types"
+import ClipCard from "./components/ClipCard/ClipCard"
 
 const ClipList = () => {
-  const list: ClipValue[] = [
-    { id: "so", type: "text", title: "Email", content: "esma.berra.karaman@hotmail.com" },
-    { id: "swo", type: "url", title: "Linkedin Profile", content: "https://www.linkedin.com/in/berra-karaman-3936471b0/" },
-    { id: "sqo", type: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "sero", type: "url", title: "Github", content: "https://github.com/brrkrmn?tab=repositories" },
-    { id: "swerweo", type: "text", title: "License", content: "MIT license" },
-    { id: "swero", type: "text", title: "This", content: "mock content" },
-    { id: "sqaaqo", type: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "s123qo", type: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "s3qo", type: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "sq", type: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "swsdfvo", type: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "sq;sofdko", type: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "ssofqo", type: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "sq3iqo", type: "password", title: "Code&Line password", content: "somethingsomething123" },
+  const list: Clip[] = [
+    { id: "so", variant: "text", title: "Email", content: "esma.berra.karaman@hotmail.com" },
+    { id: "swo", variant: "url", title: "Linkedin Profile", content: "https://www.linkedin.com/in/berra-karaman-3936471b0/" },
+    { id: "sqo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
+    { id: "sero", variant: "url", title: "Github", content: "https://github.com/brrkrmn?tab=repositories" },
+    { id: "swerweo", variant: "text", title: "License", content: "MIT license" },
+    { id: "swero", variant: "text", title: "This", content: "mock content" },
+    { id: "sqaaqo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
+    { id: "s123qo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
+    { id: "s3qo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
+    { id: "sq", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
+    { id: "swsdfvo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
+    { id: "sq;sofdko", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
+    { id: "ssofqo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
+    { id: "sq3iqo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
 
   ]
   return (
     <div className={`${sectionStyles} overflow-scroll flex-col py-4 gap-3`}>
-      {list.map((clip, index) => (
-        <Clip clip={clip}/>
+      {list.map((clip) => (
+        <ClipCard clip={clip}/>
       ))}
     </div>
   )

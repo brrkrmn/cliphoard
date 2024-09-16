@@ -1,9 +1,9 @@
 import { sectionStyles } from "../../../../constants"
-import { useAppContext } from "../../../../context/CreateClip"
+import { useCreateClipContext } from "../../../../context/CreateClip"
 import { buttonStyles, inputStyles } from "./constants"
 
 const ClipForm = () => {
-  const { createClip, resetForm, value, updateContent, updateTitle } = useAppContext()
+  const { createClip, resetForm, value, onContentChange, onTitleChange } = useCreateClipContext()
 
   return (
     <form
@@ -14,7 +14,7 @@ const ClipForm = () => {
           type="text"
           placeholder="Title"
           value={value.title}
-          onChange={(e) => { updateTitle(e) }}
+          onChange={(e) => { onTitleChange(e) }}
           className={inputStyles} />
         <div className="flex items-center justify-center gap-2">
           <button
@@ -34,7 +34,7 @@ const ClipForm = () => {
         type="text"
         placeholder="Paste content here!"
         value={value.content}
-        onChange={(e) => { updateContent(e) }}
+        onChange={(e) => { onContentChange(e) }}
         className={inputStyles} />
     </form>
   )
