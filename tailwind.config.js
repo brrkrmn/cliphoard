@@ -14,6 +14,7 @@ module.exports = {
         gray: "#f5f6f7",
         white: "#fff",
         blue: "#1a73e8",
+        sky: "#e8f0fe"
       },
       border: {
         blue: "#185abc",
