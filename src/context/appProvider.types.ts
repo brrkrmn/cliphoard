@@ -9,7 +9,9 @@ export type OptionType = "text" | "password" | "url" | "code";
 
 export type Option = {
   type: OptionType;
-  color: "blue" | "red" | "yellow" | "green";
+  borderStyle: string;
+  textStyle: string;
+  bgStyle: string
   icon: string;
   inputType: "text" | "password" | "url"
 }
