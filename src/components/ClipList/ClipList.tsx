@@ -1,32 +1,30 @@
-import { sectionStyles } from "../../constants"
-import { Clip } from "../../context/Clip/ClipProvider.types"
-import ClipCard from "./components/ClipCard/ClipCard"
+import { sectionStyles } from "../../constants";
+import { useClipContext } from "../../context/Clip";
+import ClipCard from "./components/ClipCard/ClipCard";
 
 const ClipList = () => {
-  const list: Clip[] = [
-    { id: "so", variant: "text", title: "Email", content: "esma.berra.karaman@hotmail.com" },
-    { id: "swo", variant: "url", title: "Linkedin Profile", content: "https://www.linkedin.com/in/berra-karaman-3936471b0/" },
-    { id: "sqo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "sero", variant: "url", title: "Github", content: "https://github.com/brrkrmn?tab=repositories" },
-    { id: "swerweo", variant: "text", title: "License", content: "MIT license" },
-    { id: "swero", variant: "text", title: "This", content: "mock content" },
-    { id: "sqaaqo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "s123qo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "s3qo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "sq", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "swsdfvo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "sq;sofdko", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "ssofqo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
-    { id: "sq3iqo", variant: "password", title: "Code&Line password", content: "somethingsomething123" },
+  const { clips } = useClipContext();
 
-  ]
-  return (
-    <div className={`${sectionStyles} overflow-scroll flex-col py-4 gap-3`}>
-      {list.map((clip) => (
-        <ClipCard clip={clip}/>
-      ))}
-    </div>
-  )
+  if (clips.length === 0) {
+    return (
+      <div className="mt-10 flex flex-col items-center justify-center gap-4">
+        <div className="flex items-center justify-center w-40 h-40 bg-background-white rounded-full shadow-sm">
+          <img src="../../../public/icons/undraw-no-data.svg" className="w-28 h-28" />
+        </div>
+        <div className="text-foreground-gray text-lg">
+          You don't have any clips yet.
+        </div>
+      </div>
+    )
+  } else {
+    return (
+      <div className={`${sectionStyles} overflow-scroll flex-col py-4 gap-3`}>
+        {clips.map((clip) => (
+          <ClipCard clip={clip}/>
+        ))}
+      </div>
+    )
+  }
 }
 
 export default ClipList

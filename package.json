@@ -22,6 +22,7 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
+    "@types/chrome": "^0.0.271",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "babel-loader": "^9.1.3",

@@ -2,7 +2,7 @@ import { Variant } from "../CreateClip/CreateClipProvider.types";
 
 export type ClipContextValue = null | {
   clips: Clip[];
-  setClips: (clips: Clip[]) => void;
+  getClips: () => void;
 }
 
 export type Clip = {

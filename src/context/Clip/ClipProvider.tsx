@@ -14,11 +14,18 @@ export const useClipContext = () => {
 const ClipProvider = ({ children }: { children: React.ReactNode }) => {
   const [clips, setClips] = useState<Clip[]>([]);
 
+  const getClips = () => {
+    chrome.storage.local.get('clips', (result) => {
+      const storedClips = result.clips || []
+      setClips(storedClips)
+    })
+  }
+
   return (
     <ClipContext.Provider
       value={{
         clips,
-        setClips,
+        getClips,
       }}
     >
       {children}
