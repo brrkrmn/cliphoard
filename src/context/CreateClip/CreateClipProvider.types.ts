@@ -15,7 +15,8 @@ export type ClipVariant = {
   type: Variant;
   borderStyle: string;
   textStyle: string;
-  bgStyle: string
+  bgStyle: string;
+  cardStyles: string;
   icon: string;
   inputType: "text" | "password" | "url"
 }
