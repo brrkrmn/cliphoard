@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import ClipList from "./components/ClipList/ClipList";
 import Create from "./components/Create/Create";
+import EditModal from "./components/EditModal/EditModal";
 import Header from "./components/Header/Header";
 import { useClipContext } from "./context/Clip";
 import CreateClipProvider from "./context/CreateClip/CreateClipProvider";
 
 const App = () => {
-  const { getClips } = useClipContext();
+  const { getClips, isModalOpen } = useClipContext();
 
   useEffect(() => {
     getClips()
@@ -19,6 +20,7 @@ const App = () => {
         <Create />
       </CreateClipProvider>
       <ClipList />
+      {isModalOpen && <EditModal />}
     </div>
   )
 }

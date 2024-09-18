@@ -13,6 +13,7 @@ export const useClipContext = () => {
 
 const ClipProvider = ({ children }: { children: React.ReactNode }) => {
   const [clips, setClips] = useState<Clip[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const getClips = () => {
     chrome.storage.local.get('clips', (result) => {
@@ -36,6 +37,10 @@ const ClipProvider = ({ children }: { children: React.ReactNode }) => {
     })
   }
 
+  const toggleEditModal = () => {
+    setIsModalOpen(!isModalOpen)
+  }
+
   return (
     <ClipContext.Provider
       value={{
@@ -43,6 +48,8 @@ const ClipProvider = ({ children }: { children: React.ReactNode }) => {
         getClips,
         addClipToDB,
         deleteClip,
+        isModalOpen,
+        toggleEditModal,
       }}
     >
       {children}
