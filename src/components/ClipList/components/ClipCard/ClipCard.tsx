@@ -9,14 +9,14 @@ const ClipCard = ({ clip }: { clip: Clip }) => {
   const clipVariant = clipVariants.find((variant) => variant.type === clip.variant)
 
   return (
-    <div className="group h-14 w-full flex items-center justify-between">
+    <div className="group h-14 w-full flex items-center justify-between flex-shrink-0">
       <button className={`border-[1px] ${clipVariant?.borderStyle} px-3 rounded-3xl h-full group-hover:w-[80%] transition-all w-full flex items-center gap-2 group-hover:bg-gradient-to-r from-transparent ${clipVariant?.cardStyles} from-30% via-100%`}>
         <span className={`material-symbols-outlined w-6 h-6 ${clipVariant?.textStyle}`}>{clipVariant?.icon}</span>
-        <div className="flex flex-col items-start justify-center">
-          <div className="group-hover:hidden duration-300 text-base font-semibold text-foreground-black">
+        <div className="flex flex-col items-start justify-center w-[70%]">
+          <div className="group-hover:hidden duration-300 text-base text-left font-semibold text-foreground-black w-full truncate">
             {clip.title}
           </div>
-          <div className="group-hover:text-base transition-all text-xs text-foreground-gray">
+          <div className="group-hover:text-base transition-all text-left text-xs text-foreground-gray w-full truncate">
             {clip.content}
           </div>
         </div>
