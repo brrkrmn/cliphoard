@@ -1,8 +1,11 @@
 import { clipVariants } from "../../../../constants";
+import { useClipContext } from "../../../../context/Clip";
 import { Clip } from "../../../../context/Clip/ClipProvider.types";
 
 
 const ClipCard = ({ clip }: { clip: Clip }) => {
+  const { deleteClip } = useClipContext();
+
   const clipVariant = clipVariants.find((variant) => variant.type === clip.variant)
 
   return (
@@ -25,7 +28,7 @@ const ClipCard = ({ clip }: { clip: Clip }) => {
         <button className="flex w-8 transition items-center justify-center rounded-full hover:bg-background-gray h-8">
           <span className="material-symbols-outlined text-foreground-gray">more_vert</span>
         </button>
-        <button className="flex w-8 transition items-center justify-center rounded-full hover:bg-background-gray h-8">
+        <button onClick={() => deleteClip(clip)} className="flex w-8 transition items-center justify-center rounded-full hover:bg-background-gray h-8">
           <span className="material-symbols-outlined text-foreground-gray">delete</span>
         </button>
       </div>

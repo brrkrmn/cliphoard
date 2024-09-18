@@ -4,6 +4,7 @@ export type ClipContextValue = null | {
   clips: Clip[];
   getClips: () => void;
   addClipToDB: (clip: Clip) => void;
+  deleteClip: (clip: Clip) => void;
 }
 
 export type Clip = {

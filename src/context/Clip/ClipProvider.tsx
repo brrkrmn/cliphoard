@@ -24,7 +24,14 @@ const ClipProvider = ({ children }: { children: React.ReactNode }) => {
   const addClipToDB = (clip: Clip) => {
     const newClips = [...clips, clip]
     chrome.storage.local.set({ clips: newClips }, () => {
-      console.log(clips)
+      getClips()
+    })
+  }
+
+  const deleteClip = (clip: Clip) => {
+    chrome.storage.local.clear();
+    const newClips = clips.filter(c => c.id !== clip.id)
+    chrome.storage.local.set({ clips: newClips }, () => {
       getClips()
     })
   }
@@ -35,6 +42,7 @@ const ClipProvider = ({ children }: { children: React.ReactNode }) => {
         clips,
         getClips,
         addClipToDB,
+        deleteClip,
       }}
     >
       {children}
