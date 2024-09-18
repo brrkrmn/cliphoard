@@ -8,9 +8,15 @@ const ClipCard = ({ clip }: { clip: Clip }) => {
 
   const clipVariant = clipVariants.find((variant) => variant.type === clip.variant)
 
+  const copyContent = () => {
+    navigator.clipboard.writeText(clip.content)
+  }
+
   return (
     <div className="group h-14 w-full flex items-center justify-between flex-shrink-0">
-      <button className={`border-[1px] ${clipVariant?.borderStyle} px-3 rounded-3xl h-full group-hover:w-[80%] transition-all w-full flex items-center gap-2 group-hover:bg-gradient-to-r from-transparent ${clipVariant?.cardStyles} from-30% via-100%`}>
+      <button
+        onClick={copyContent}
+        className={`border-[1px] ${clipVariant?.borderStyle} px-3 rounded-3xl h-full group-hover:w-[80%] transition-all w-full flex items-center gap-2 group-hover:bg-gradient-to-r from-transparent ${clipVariant?.cardStyles} from-30% via-100%`}>
         <span className={`material-symbols-outlined w-6 h-6 ${clipVariant?.textStyle}`}>{clipVariant?.icon}</span>
         <div className="flex flex-col items-start justify-center w-[70%]">
           <div className="group-hover:hidden duration-300 text-base text-left font-semibold text-foreground-black w-full truncate">
