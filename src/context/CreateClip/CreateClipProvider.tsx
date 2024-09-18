@@ -54,6 +54,7 @@ const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
     <CreateClipContext.Provider
       value={{
         setSelectedVariant,
+        selectedVariant,
         step,
         setStep,
         createClip,

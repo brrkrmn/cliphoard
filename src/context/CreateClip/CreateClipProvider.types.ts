@@ -1,6 +1,7 @@
 export type CreateClipContextValue = null | {
   step: Step;
-  value: CreateFormValue
+  value: CreateFormValue;
+  selectedVariant: Variant;
   setSelectedVariant: (value: Variant) => void;
   setStep: (value: Step) => void;
   createClip: (value: CreateFormValue) => void;
@@ -16,6 +17,7 @@ export type ClipVariant = {
   borderStyle: string;
   textStyle: string;
   bgStyle: string;
+  selectedStyle: string;
   cardStyles: string;
   icon: string;
   inputType: "text" | "password" | "url"

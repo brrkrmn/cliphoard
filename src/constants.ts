@@ -8,6 +8,7 @@ export const clipVariants: ClipVariant[] = [
     borderStyle: "border-blue",
     textStyle: "text-blue",
     bgStyle: "hover:bg-blue",
+    selectedStyle: "bg-blue text-foreground-white",
     cardStyles: "via-blue to-blue",
     icon: "match_case",
     inputType: "text"
@@ -16,6 +17,7 @@ export const clipVariants: ClipVariant[] = [
     type: "password",
     borderStyle: "border-red",
     textStyle: "text-red",
+    selectedStyle: "bg-red text-foreground-white",
     bgStyle: "hover:bg-red",
     cardStyles: "via-red to-red",
     icon: "vpn_key",
@@ -26,6 +28,7 @@ export const clipVariants: ClipVariant[] = [
     borderStyle: "border-yellow",
     textStyle: "text-yellow",
     bgStyle: "hover:bg-yellow",
+    selectedStyle: "bg-yellow text-foreground-white",
     cardStyles: "via-yellow to-yellow",
     icon: "link",
     inputType: "url"
@@ -35,6 +38,7 @@ export const clipVariants: ClipVariant[] = [
     borderStyle: "border-green",
     textStyle: "text-green",
     bgStyle: "hover:bg-green",
+    selectedStyle: "bg-green text-foreground-white",
     cardStyles: "via-green to-green",
     icon: "code",
     inputType: "text"
