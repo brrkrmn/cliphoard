@@ -3,6 +3,7 @@ import { useClipContext } from "../../context/Clip";
 import { Clip } from "../../context/Clip/ClipProvider.types";
 import { useCreateClipContext } from "../../context/CreateClip";
 import VariantList from "../Create/components/VariantList/VariantList";
+import { editInputStyles, editLabelStyles, editSectionStyles } from "./constants";
 
 const EditModal = () => {
   const { toggleEditModal, currentClip, editClip } = useClipContext();
@@ -26,35 +27,41 @@ const EditModal = () => {
       <form onSubmit={handleSubmit} className={`${sectionStyles} flex-col px-4 justify-between h-full gap-4`}>
         <div className="flex items-center justify-between w-full">
           <h1 className="font-bold text-foreground-blue">Edit Clip</h1>
-          <button onClick={toggleEditModal} className="ml-auto w-8 h-8 flex items-center justify-center rounded-full flex-shrink-0 text-foreground-gray hover:text-foreground-blue hover:bg-background-sky transition">
+          <button
+            data-microtip-position="bottom"
+            role="tooltip"
+            aria-label="Close"
+            onClick={toggleEditModal}
+            className="ml-auto w-8 h-8 flex items-center justify-center rounded-full flex-shrink-0 text-foreground-gray hover:text-foreground-blue hover:bg-background-sky transition"
+          >
             <span className="material-symbols-outlined">close</span>
           </button>
         </div>
         <div className="w-full h-full flex flex-col items-center justify-start gap-2">
-          <div className="w-full flex flex-col gap-2 items-start justify-center rounded-xl bg-background-sky shadow-inner p-2">
-            <p className="text-sm font-semibold text-foreground-blue">Variant</p>
+          <div className={editSectionStyles}>
+            <p className={editLabelStyles}>Variant</p>
             <VariantList />
           </div>
-          <div className="w-full flex flex-col gap-2 items-start justify-center rounded-xl bg-background-sky shadow-inner p-2">
-            <label htmlFor="title" className="w-full text-sm font-semibold text-foreground-blue">Title</label>
+          <div className={editSectionStyles}>
+            <label htmlFor="title" className={editLabelStyles}>Title</label>
             <input
               id="title"
               type="text"
               placeholder="Title"
               value={value.title}
               onChange={(e) => { onTitleChange(e) }}
-              className="bg-transparent w-full h-6 font-medium outline-none truncate"
+              className={editInputStyles}
             />
           </div>
-          <div className="w-full flex flex-col gap-2 items-start justify-center rounded-xl bg-background-sky shadow-inner p-2">
-            <label htmlFor="content" className="w-full text-sm font-semibold text-foreground-blue">Content</label>
+          <div className={editSectionStyles}>
+            <label htmlFor="content" className={editLabelStyles}>Content</label>
             <input
               id="content"
               type="text"
               placeholder="Paste content here!"
               value={value.content}
               onChange={(e) => { onContentChange(e) }}
-              className="bg-transparent w-full h-6 font-medium outline-none truncate"
+              className={editInputStyles}
             />
           </div>
         </div>
