@@ -16,7 +16,7 @@ export const useCreateClipContext = () => {
 
 const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
   const [step, setStep] = useState<Step>("initial")
-  const [selectedVariant, setSelectedVariant] = useState<Variant>("text");
+  const [selectedVariant, setSelectedVariant] = useState<Variant | "">("");
   const [value, setValue] = useState<CreateFormValue>({
     title: '',
     content: '',
@@ -30,6 +30,7 @@ const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
       id: id,
       title: value.title,
       content: value.content,
+      // @ts-ignore
       variant: selectedVariant,
     }
 

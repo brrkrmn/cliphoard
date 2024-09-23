@@ -1,7 +1,7 @@
 export type CreateClipContextValue = null | {
   step: Step;
   value: CreateFormValue;
-  selectedVariant: Variant;
+  selectedVariant: Variant | "";
   setSelectedVariant: (value: Variant) => void;
   setStep: (value: Step) => void;
   createClip: (value: CreateFormValue) => void;
