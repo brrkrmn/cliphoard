@@ -11,6 +11,7 @@ const VariantButton = ({ variant }: { variant: ClipVariant }) => {
 
   return (
     <button
+      type="button"
       onClick={onClick}
       className={`${variant.borderStyle} ${variant.textStyle} ${variant.bgStyle} ${selectedVariant === variant.type && variant.selectedStyle} transition-all duration-300 w-12 h-12 bg-background-white border-2 hover:text-foreground-white rounded-full flex justify-center items-center`}
     >
