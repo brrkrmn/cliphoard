@@ -56,6 +56,7 @@ const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
   const resetForm = () => {
     setValue({ title: '', content: ''})
     setStep("initial")
+    setSelectedVariant("")
   }
 
   const onTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

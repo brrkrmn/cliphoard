@@ -8,8 +8,14 @@ const ClipForm = () => {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    createClip(value)
-    toast("Clip created", { id: "create" })
+    if (value.title === "") {
+      toast.error("Title is missing", { id: "no-title" })
+    } else if (value.content === "") {
+      toast.error("Content is missing", { id: "no-content" })
+    } else {
+      createClip(value)
+      toast("Clip created", { id: "create" })
+    }
   }
 
   return (
