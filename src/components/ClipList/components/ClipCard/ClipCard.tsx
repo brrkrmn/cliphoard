@@ -26,15 +26,31 @@ const ClipCard = ({ clip }: { clip: Clip }) => {
             {clip.content}
           </div>
         </div>
-        <div className={`ml-auto w-8 h-8 flex items-center justify-center transition`}>
+        <div
+          data-microtip-position="bottom"
+          role="tooltip"
+          aria-label="Copy"
+          className={`ml-auto w-8 h-8 flex items-center justify-center transition`}>
           <span className="material-symbols-outlined text-foreground-gray transition group-hover:text-foreground-white">content_copy</span>
         </div>
       </button>
       <div className="hidden w-20 group-hover:flex transition-all duration-300 delay-500 items-center justify-center gap-1">
-        <button onClick={showEditModal} className="flex w-8 transition items-center justify-center rounded-full hover:bg-background-gray h-8">
+        <button
+          data-microtip-position="bottom"
+          role="tooltip"
+          aria-label="Edit"
+          onClick={showEditModal}
+          className="flex w-8 transition items-center justify-center rounded-full hover:bg-background-gray h-8"
+        >
           <span className="material-symbols-outlined text-foreground-gray">edit_square</span>
         </button>
-        <button onClick={() => deleteClip(clip)} className="flex w-8 transition items-center justify-center rounded-full hover:bg-background-gray h-8">
+        <button
+          data-microtip-position="bottom-left"
+          role="tooltip"
+          aria-label="Delete"
+          onClick={() => deleteClip(clip)}
+          className="flex w-8 transition items-center justify-center rounded-full hover:bg-background-gray h-8"
+        >
           <span className="material-symbols-outlined text-foreground-gray">delete</span>
         </button>
       </div>

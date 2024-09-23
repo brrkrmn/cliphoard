@@ -13,6 +13,9 @@ const VariantButton = ({ variant }: { variant: ClipVariant }) => {
     <button
       type="button"
       onClick={onClick}
+      data-microtip-position="bottom"
+      role="tooltip"
+      aria-label={variant.type}
       className={`${variant.borderStyle} ${variant.textStyle} ${variant.bgStyle} ${selectedVariant === variant.type && variant.selectedStyle} transition-all duration-300 w-12 h-12 bg-background-white border-2 hover:text-foreground-white rounded-full flex justify-center items-center`}
     >
       <span className="material-symbols-outlined w-6 h-6">{variant.icon}</span>

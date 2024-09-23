@@ -42,3 +42,7 @@ body {
   width: 400px;
   height: 500px;
 }
+
+:root {
+  --microtip-transition-delay: 1s;
+}
