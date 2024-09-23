@@ -6,6 +6,8 @@ export type ClipContextValue = null | {
   addClipToDB: (clip: Clip) => void;
   deleteClip: (clip: Clip) => void;
   toggleEditModal: () => void;
+  setCurrentClip: (clip: Clip) => void;
+  currentClip: Clip;
   isModalOpen: boolean;
 }
 

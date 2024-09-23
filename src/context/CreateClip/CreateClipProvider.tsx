@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { useClipContext } from "../Clip";
 import { Clip } from "../Clip/ClipProvider.types";
@@ -21,8 +21,23 @@ const CreateClipProvider = ({ children }: { children: React.ReactNode }) => {
     title: '',
     content: '',
   })
-  const { addClipToDB } = useClipContext()
+  const { addClipToDB, currentClip, isModalOpen } = useClipContext()
 
+  useEffect(() => {
+    if (isModalOpen && currentClip) {
+      setValue({
+        title: currentClip.title,
+        content: currentClip.content
+      })
+      setSelectedVariant(currentClip.variant)
+    } else {
+      setValue({
+        title: "",
+        content: ""
+      })
+      setSelectedVariant("")
+    }
+  }, [isModalOpen, currentClip])
 
   const createClip = (value: CreateFormValue) => {
     const id = uuidv4();
