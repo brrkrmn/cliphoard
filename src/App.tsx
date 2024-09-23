@@ -2,6 +2,7 @@ import ClipList from "./components/ClipList/ClipList";
 import Create from "./components/Create/Create";
 import EditModal from "./components/EditModal/EditModal";
 import Header from "./components/Header/Header";
+import Toast from "./components/Toast/Toast";
 import { useClipContext } from "./context/Clip";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <Create />
       <ClipList />
       {isModalOpen && <EditModal />}
+      <Toast />
     </div>
   )
 }

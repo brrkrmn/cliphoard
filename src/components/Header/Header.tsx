@@ -11,7 +11,7 @@ const Header = () => {
         aria-label="Settings"
         className="flex items-center justify-center rounded-full hover:bg-background-gray p-1 transition"
       >
-        <i className="material-icons-outlined w-6 h-6 text-foreground-black">settings</i>
+        <span className="material-symbols-outlined w-6 h-6 text-foreground-black">settings</span>
       </button>
     </div>
   )

@@ -1,3 +1,4 @@
+import toast from "react-hot-toast"
 import { sectionStyles } from "../../../../constants"
 import { useCreateClipContext } from "../../../../context/CreateClip"
 import { buttonStyles, inputStyles } from "./constants"
@@ -8,6 +9,7 @@ const ClipForm = () => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     createClip(value)
+    toast("Clip created", { id: "create" })
   }
 
   return (

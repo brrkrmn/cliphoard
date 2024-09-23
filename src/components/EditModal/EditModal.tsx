@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { sectionStyles } from "../../constants";
 import { useClipContext } from "../../context/Clip";
 import { Clip } from "../../context/Clip/ClipProvider.types";
@@ -20,6 +21,7 @@ const EditModal = () => {
     }
     editClip(editedClip)
     toggleEditModal()
+    toast("Clip edited", { id: 'edit' })
   }
 
   return (
