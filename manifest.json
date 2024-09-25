@@ -2,10 +2,10 @@
   "manifest_version": 3,
   "name": "ClipHoard",
   "description": "Quickly access your most-used data",
-  "version": "0.0.0.1.",
+  "version": "1.0",
   "action": {
-    "default_popup": "./src/popup.html",
-    "default_icon": "./public/icons/cliphoard.png"
+    "default_popup": "popup.html",
+    "default_icon": "icons/cliphoard.png"
   },
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"

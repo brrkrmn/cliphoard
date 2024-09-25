@@ -1,9 +1,11 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    filename: 'bundle.js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
@@ -32,7 +34,20 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'manifest.json', to: '.' },
+        { from: 'public/icons', to: 'icons' },
+      ],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/popup.html',
+      filename: 'popup.html',
+      chunks: [],
+    }),
+  ],
   watch: true,
-  mode: 'development',
+  mode: 'production',
   devtool: 'source-map',
 };
