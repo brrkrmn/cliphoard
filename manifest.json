@@ -5,7 +5,12 @@
   "version": "1.0",
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icons/cliphoard.png"
+    "default_icon": {
+      "16": "icons/cliphoard-16.png",
+      "32": "icons/cliphoard-32.png",
+      "48": "icons/cliphoard-48.png",
+      "128": "icons/cliphoard-128.png"
+    }
   },
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
