@@ -18,7 +18,7 @@ const ClipList = () => {
     )
   } else {
     return (
-      <div className={`${sectionStyles} overflow-scroll justify-start flex-col pt-4 pb-10 gap-3`}>
+      <div className={`${sectionStyles} overflow-scroll hidden-scrollbar justify-start flex-col pt-4 h-full pb-10 gap-3`}>
         {clips.map((clip) => (
           <ClipCard key={clip.id} clip={clip}/>
         ))}

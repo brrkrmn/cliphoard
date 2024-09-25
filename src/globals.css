@@ -44,5 +44,13 @@ body {
 }
 
 :root {
-  --microtip-transition-delay: 1s;
+  --microtip-transition-delay: 1.2s;
+}
+
+.hidden-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
 }

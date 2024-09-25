@@ -5,14 +5,14 @@ const Header = () => {
   return (
     <div className={`${sectionStyles} justify-between z-50`}>
       <Logo />
-      <button
+      {/* <button
         data-microtip-position="bottom"
         role="tooltip"
         aria-label="Settings"
         className="flex items-center justify-center rounded-full hover:bg-background-gray p-1 transition"
       >
         <span className="material-symbols-outlined w-6 h-6 text-foreground-black">settings</span>
-      </button>
+      </button> */}
     </div>
   )
 }
