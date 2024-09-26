@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-ClipHoard is a Chrome extension to quickly save and access your most used data. You can save text, password, URLs, and code blocks and copy them with just a click.
+ClipHoard is a productivity tool to quickly save and access your most used data. You can save text, password, URLs, and code blocks and copy them with just a click. To use install the extension, follow this [link](https://chromewebstore.google.com/detail/cliphoard/amgfihockidjlcbhljidpcefieldgljf?hl=en-US&utm_source=ext_sidebar).
 
 <br>
 
@@ -16,7 +16,7 @@ To clone and run this project, you'll need Git and Node.js (which comes with npm
 
 <br>
 
-### Setting up Frontend
+### Setting up the project
 
 1. **Clone frontend repo**
 ```bash
@@ -37,9 +37,16 @@ npm run watch
 
 ### View the Extension on Dev Mode
 1. **Visit [Chrome Extensions Page](chrome://extensions/)**
-2. **Click "Load unpacked"
-3. Select the ClipHoard folder from your computer
-4. Pin the extension
+2. **Click "Load unpacked"**
+3. **Select the ClipHoard folder from your computer**
+4. **Pin the extension**
+
+<br>
+
+⚠️ Remember to refresh the extension after making changes to `manifest.json`. 
+
+For more information see [docs](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#reload)
+
 <br>
 
 ## License
