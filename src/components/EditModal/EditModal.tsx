@@ -1,5 +1,4 @@
 import toast from "react-hot-toast";
-import { sectionStyles } from "../../constants";
 import { useClipContext } from "../../context/Clip";
 import { Clip } from "../../context/Clip/ClipProvider.types";
 import { useCreateClipContext } from "../../context/CreateClip";
@@ -26,7 +25,7 @@ const EditModal = () => {
 
   return (
     <div className="border-2 p-4 pt-[76px] absolute top-0 left-0 w-full h-full backdrop-blur-sm flex items-start justify-center">
-      <form onSubmit={handleSubmit} className={`${sectionStyles} flex-col px-4 justify-between h-full gap-4`}>
+      <form onSubmit={handleSubmit} className="section flex-col px-4 justify-between h-full gap-4">
         <div className="flex items-center justify-between w-full">
           <h1 className="font-bold text-blue">Edit Clip</h1>
           <button

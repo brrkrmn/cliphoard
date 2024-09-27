@@ -1,5 +1,4 @@
 import toast from "react-hot-toast"
-import { sectionStyles } from "../../../../constants"
 import { useCreateClipContext } from "../../../../context/CreateClip"
 import { buttonStyles, inputStyles } from "./constants"
 
@@ -21,7 +20,7 @@ const ClipForm = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className={`${sectionStyles} flex-col gap-2`}>
+      className="section flex-col gap-2">
       <div className="w-full flex items-center justify-between gap-4">
         <input
           type="text"

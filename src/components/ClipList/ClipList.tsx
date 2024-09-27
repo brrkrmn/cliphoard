@@ -1,4 +1,3 @@
-import { sectionStyles } from "../../constants";
 import { useClipContext } from "../../context/Clip";
 import ClipCard from "./components/ClipCard/ClipCard";
 
@@ -18,7 +17,7 @@ const ClipList = () => {
     )
   } else {
     return (
-      <div className={`${sectionStyles} overflow-scroll hidden-scrollbar justify-start flex-col pt-4 h-full pb-10 gap-3`}>
+      <div className="section overflow-scroll hidden-scrollbar justify-start flex-col pt-4 h-full pb-10 gap-3">
         {clips.map((clip) => (
           <ClipCard key={clip.id} clip={clip}/>
         ))}

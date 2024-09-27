@@ -1,7 +1,5 @@
 import { ClipVariant } from "./context/CreateClip/CreateClipProvider.types"
 
-export const sectionStyles = "w-full rounded-xl p-2 shadow-sm bg-white flex items-center justify-start"
-
 export const clipVariants: ClipVariant[] = [
   {
     type: "text",
