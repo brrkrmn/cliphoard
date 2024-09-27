@@ -35,17 +35,32 @@ npm install
 npm run watch
 ```
 
+<br>
+
 ### View the Extension on Dev Mode
 1. **Visit [Chrome Extensions Page](chrome://extensions/)**
 2. **Click "Load unpacked"**
 3. **Select the ClipHoard folder from your computer**
 4. **Pin the extension**
 
-<br>
-
 ⚠️ Remember to refresh the extension after making changes to `manifest.json`. 
 
 For more information see [docs](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#reload)
+
+<br>
+
+### View the Extension on Production Mode
+1. Build the project
+```bash
+npm run build
+```
+2. Create a zip file of `dist` folder
+```bash
+zip -r extension.zip dist
+```
+3. **Visit [Chrome Extensions Page](chrome://extensions/)**
+4. **Click "Load unpacked"**
+5. **Select the `extension.zip` from your computer**
 
 <br>
 
