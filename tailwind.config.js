@@ -4,21 +4,13 @@ module.exports = {
   theme: {
     colors: {
       transparent: 'transparent',
-      foreground: {
-        black: "#202124",
-        gray: "#80868b",
-        blue: "#1a73e8",
-        white: "#fff"
+      white: "#fff",
+      black: "#202124",
+      gray: {
+        DEFAULT: "#80868b",
+        light: "#f5f6f7",
       },
-      background: {
-        gray: "#f5f6f7",
-        white: "#fff",
-        blue: "#1a73e8",
-        sky: "#e8f0fe"
-      },
-      border: {
-        blue: "#185abc",
-      },
+      sky: "#e8f0fe",
       blue: "#1a73e8",
       green: "#1e8e3e",
       yellow: "#f9ab00",

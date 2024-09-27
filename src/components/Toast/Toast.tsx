@@ -4,10 +4,10 @@ const Toast = () => {
   return (
     <Toaster
       toastOptions={{
-        className: "bg-background-blue text-foreground-white h-10",
+        className: "bg-blue text-white h-10",
         duration: 1000,
         error: {
-          className: "bg-red text-foreground-white h-10",
+          className: "bg-red text-white h-10",
           icon: null
         }
       }}

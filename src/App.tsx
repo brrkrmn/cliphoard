@@ -9,7 +9,7 @@ const App = () => {
   const { isModalOpen } = useClipContext();
 
   return (
-    <div className="w-full h-full p-4 flex flex-col gap-4 bg-background-gray">
+    <div className="w-full h-full p-4 flex flex-col gap-4 bg-gray-light">
       <Header />
       <Create />
       <ClipList />

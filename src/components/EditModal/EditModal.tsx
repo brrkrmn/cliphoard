@@ -28,13 +28,13 @@ const EditModal = () => {
     <div className="border-2 p-4 pt-[76px] absolute top-0 left-0 w-full h-full backdrop-blur-sm flex items-start justify-center">
       <form onSubmit={handleSubmit} className={`${sectionStyles} flex-col px-4 justify-between h-full gap-4`}>
         <div className="flex items-center justify-between w-full">
-          <h1 className="font-bold text-foreground-blue">Edit Clip</h1>
+          <h1 className="font-bold text-blue">Edit Clip</h1>
           <button
             data-microtip-position="bottom"
             role="tooltip"
             aria-label="Close"
             onClick={toggleEditModal}
-            className="ml-auto w-8 h-8 flex items-center justify-center rounded-full flex-shrink-0 text-foreground-gray hover:text-foreground-blue hover:bg-background-sky transition"
+            className="ml-auto w-8 h-8 flex items-center justify-center rounded-full flex-shrink-0 text-gray hover:text-blue hover:bg-sky transition"
           >
             <span className="material-symbols-outlined">close</span>
           </button>
@@ -67,7 +67,7 @@ const EditModal = () => {
             />
           </div>
         </div>
-        <button type="submit" className="flex items-center justify-center flex-shrink-0 border-2 w-full rounded-3xl h-10 border-blue text-foreground-blue hover:bg-background-blue hover:text-foreground-white transition">
+        <button type="submit" className="flex items-center justify-center flex-shrink-0 border-2 w-full rounded-3xl h-10 border-blue text-blue hover:bg-blue hover:text-white transition">
           Save Changes
         </button>
       </form>
