@@ -1,6 +1,5 @@
 import toast from "react-hot-toast"
 import { useCreateClipContext } from "../../../../context/CreateClip"
-import { buttonStyles, inputStyles } from "./constants"
 
 const ClipForm = () => {
   const { createClip, resetForm, value, onContentChange, onTitleChange } = useCreateClipContext()
@@ -27,17 +26,17 @@ const ClipForm = () => {
           placeholder="Title"
           value={value.title}
           onChange={(e) => { onTitleChange(e) }}
-          className={inputStyles} />
+          className="input" />
         <div className="flex items-center justify-center gap-2">
           <button
             type="submit"
-            className={buttonStyles}>
+            className="iconButton">
             <span className="material-symbols-outlined text-green">check</span>
           </button>
           <button
             type="button"
             onClick={resetForm}
-            className={buttonStyles}>
+            className="iconButton">
             <span className="material-symbols-outlined text-red">close</span>
           </button>
         </div>
@@ -47,7 +46,7 @@ const ClipForm = () => {
         placeholder="Paste content here!"
         value={value.content}
         onChange={(e) => { onContentChange(e) }}
-        className={inputStyles} />
+        className="input" />
     </form>
   )
 }
