@@ -31,7 +31,7 @@ const ClipProvider = ({ children }: { children: React.ReactNode }) => {
     })
   }
 
-  const addClipToDB = (clip: Clip) => {
+  const createClip = (clip: Clip) => {
     const newClips = [...clips, clip]
     saveClips(newClips)
   }
@@ -55,7 +55,7 @@ const ClipProvider = ({ children }: { children: React.ReactNode }) => {
     <ClipContext.Provider
       value={{
         clips,
-        addClipToDB,
+        createClip,
         deleteClip,
         editClip,
       }}

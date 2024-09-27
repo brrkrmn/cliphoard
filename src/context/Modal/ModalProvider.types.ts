@@ -1,14 +1,19 @@
-export type CreateClipContextValue = null | {
-  step: Step;
+import { Clip } from "../Clip/ClipProvider.types";
+
+export type ModalContextValue = null | {
+  handleSubmit: () => void;
+  currentClip: Clip | null;
+  setCurrentClip: (clip: Clip) => void;
+  isOpen: boolean;
+  toggleModal: () => void;
   value: CreateFormValue;
   selectedVariant: Variant | "";
   setSelectedVariant: (value: Variant) => void;
-  setStep: (value: Step) => void;
-  createClip: (value: CreateFormValue) => void;
-  resetForm: () => void;
   onTitleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onContentChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+export type ModalType = "edit" | "create"
 
 export type Variant = "text" | "password" | "url" | "code";
 
@@ -27,5 +32,3 @@ export type CreateFormValue = {
   title: string;
   content: string;
 }
-
-export type Step = "initial" | "select-variant" | "create-form"

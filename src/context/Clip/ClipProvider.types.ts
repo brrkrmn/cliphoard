@@ -1,8 +1,8 @@
-import { Variant } from "../CreateClip/CreateClipProvider.types";
+import { Variant } from "../Modal/ModalProvider.types";
 
 export type ClipContextValue = null | {
   clips: Clip[];
-  addClipToDB: (clip: Clip) => void;
+  createClip: (clip: Clip) => void;
   deleteClip: (clip: Clip) => void;
   editClip: (clip: Clip) => void;
 }

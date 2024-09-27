@@ -1,6 +1,7 @@
 import Actions from "./components/Actions/Actions";
 import ClipList from "./components/ClipList/ClipList";
 import Header from "./components/Header/Header";
+import Modal from "./components/Modal/Modal";
 import Toast from "./components/Toast/Toast";
 
 const App = () => {
@@ -9,7 +10,7 @@ const App = () => {
       <Header />
       <Actions />
       <ClipList />
-      {/* <Modal /> */}
+      <Modal />
       <Toast />
     </div>
   )

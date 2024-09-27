@@ -2,14 +2,17 @@ import toast from "react-hot-toast";
 import { clipVariants } from "../../../../constants";
 import { useClipContext } from "../../../../context/Clip";
 import { Clip } from "../../../../context/Clip/ClipProvider.types";
+import { useModalContext } from "../../../../context/Modal";
 
 
 const ClipCard = ({ clip }: { clip: Clip }) => {
-  const { deleteClip, toggleEditModal, setCurrentClip } = useClipContext();
+  const { deleteClip } = useClipContext();
+  const { toggleModal, setCurrentClip } = useModalContext();
+
   const clipVariant = clipVariants.find((variant) => variant.type === clip.variant)
 
   const showEditModal = () => {
-    toggleEditModal()
+    toggleModal()
     setCurrentClip(clip)
   }
 

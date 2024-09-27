@@ -1,4 +1,4 @@
-import { ClipVariant } from "./context/CreateClip/CreateClipProvider.types"
+import { ClipVariant } from "./context/Modal/ModalProvider.types"
 
 export const clipVariants: ClipVariant[] = [
   {

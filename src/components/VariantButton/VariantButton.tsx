@@ -1,12 +1,11 @@
-import { useCreateClipContext } from "../../context/CreateClip"
-import { ClipVariant } from "../../context/CreateClip/CreateClipProvider.types"
+import { useModalContext } from "../../context/Modal"
+import { ClipVariant } from "../../context/Modal/ModalProvider.types"
 
 const VariantButton = ({ variant }: { variant: ClipVariant }) => {
-  const { setSelectedVariant, selectedVariant, setStep } = useCreateClipContext()
+  const { setSelectedVariant, selectedVariant } = useModalContext()
 
   const onClick = () => {
     setSelectedVariant(variant.type)
-    setStep("create-form")
   }
 
   return (
