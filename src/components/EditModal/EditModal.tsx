@@ -3,7 +3,6 @@ import { useClipContext } from "../../context/Clip";
 import { Clip } from "../../context/Clip/ClipProvider.types";
 import { useCreateClipContext } from "../../context/CreateClip";
 import VariantList from "../Create/components/VariantList/VariantList";
-import { editInputStyles, editLabelStyles, editSectionStyles } from "./constants";
 
 const EditModal = () => {
   const { toggleEditModal, currentClip, editClip } = useClipContext();
@@ -39,30 +38,30 @@ const EditModal = () => {
           </button>
         </div>
         <div className="w-full h-full flex flex-col items-center justify-start gap-2">
-          <div className={editSectionStyles}>
-            <p className={editLabelStyles}>Variant</p>
+          <div className="editSection">
+            <p className="editLabel">Variant</p>
             <VariantList />
           </div>
-          <div className={editSectionStyles}>
-            <label htmlFor="title" className={editLabelStyles}>Title</label>
+          <div className="editSection">
+            <label htmlFor="title" className="editLabel">Title</label>
             <input
               id="title"
               type="text"
               placeholder="Title"
               value={value.title}
               onChange={(e) => { onTitleChange(e) }}
-              className={editInputStyles}
+              className="editInput"
             />
           </div>
-          <div className={editSectionStyles}>
-            <label htmlFor="content" className={editLabelStyles}>Content</label>
+          <div className="editSection">
+            <label htmlFor="content" className="editLabel">Content</label>
             <input
               id="content"
               type="text"
               placeholder="Paste content here!"
               value={value.content}
               onChange={(e) => { onContentChange(e) }}
-              className={editInputStyles}
+              className="editInput"
             />
           </div>
         </div>
