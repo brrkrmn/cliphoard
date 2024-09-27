@@ -2,9 +2,9 @@ import toast from "react-hot-toast";
 import { useClipContext } from "../../context/Clip";
 import { Clip } from "../../context/Clip/ClipProvider.types";
 import { useCreateClipContext } from "../../context/CreateClip";
-import VariantList from "../Create/components/VariantList/VariantList";
+import VariantList from "../VariantList/VariantList";
 
-const EditModal = () => {
+const Modal = () => {
   const { toggleEditModal, currentClip, editClip } = useClipContext();
   const { value, onTitleChange, onContentChange, selectedVariant } = useCreateClipContext();
 
@@ -73,4 +73,4 @@ const EditModal = () => {
   )
 }
 
-export default EditModal;
+export default Modal;

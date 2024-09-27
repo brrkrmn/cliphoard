@@ -13,8 +13,6 @@ export const useClipContext = () => {
 
 const ClipProvider = ({ children }: { children: React.ReactNode }) => {
   const [clips, setClips] = useState<Clip[]>([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentClip, setCurrentClip] = useState<Clip>();
 
   useEffect(() => {
     getClips()
@@ -53,21 +51,12 @@ const ClipProvider = ({ children }: { children: React.ReactNode }) => {
     saveClips(newClips)
   }
 
-  const toggleEditModal = () => {
-    setIsModalOpen(!isModalOpen)
-  }
-
   return (
     <ClipContext.Provider
       value={{
         clips,
         addClipToDB,
         deleteClip,
-        isModalOpen,
-        toggleEditModal,
-        setCurrentClip,
-        // @ts-ignore
-        currentClip,
         editClip,
       }}
     >

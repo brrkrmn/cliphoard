@@ -1,5 +1,5 @@
 import toast from "react-hot-toast"
-import { useCreateClipContext } from "../../../../context/CreateClip"
+import { useCreateClipContext } from "../../context/CreateClip"
 
 const ClipForm = () => {
   const { createClip, resetForm, value, onContentChange, onTitleChange } = useCreateClipContext()

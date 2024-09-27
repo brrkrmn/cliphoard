@@ -1,5 +1,5 @@
-import { useCreateClipContext } from "../../../../context/CreateClip";
-import { ClipVariant } from "../../../../context/CreateClip/CreateClipProvider.types";
+import { useCreateClipContext } from "../../context/CreateClip"
+import { ClipVariant } from "../../context/CreateClip/CreateClipProvider.types"
 
 const VariantButton = ({ variant }: { variant: ClipVariant }) => {
   const { setSelectedVariant, selectedVariant, setStep } = useCreateClipContext()
