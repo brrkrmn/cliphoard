@@ -54,13 +54,9 @@ For more information see [docs](https://developer.chrome.com/docs/extensions/get
 ```bash
 npm run build
 ```
-2. Create a zip file of `dist` folder
-```bash
-zip -r extension.zip dist
-```
 3. **Visit [Chrome Extensions Page](chrome://extensions/)**
 4. **Click "Load unpacked"**
-5. **Select the `extension.zip` from your computer**
+5. **Select the `dist` folder from your computer**
 
 <br>
 
