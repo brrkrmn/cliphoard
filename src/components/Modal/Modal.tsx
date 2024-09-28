@@ -14,6 +14,7 @@ const Modal = () => {
           <div className="flex items-center justify-between w-full">
             <h1 className="font-bold text-blue">{modalConstants[modalType].title}</h1>
             <button
+              type="button"
               data-microtip-position="bottom"
               role="tooltip"
               aria-label="Close"
