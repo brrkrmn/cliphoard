@@ -51,30 +51,50 @@ const ModalProvider = ({ children }: { children: React.ReactNode }) => {
     setValue({ ...value, content: e.target.value })
   }
 
-  const handleSubmit = () => {
-    if (currentClip) {
-      const editedClip: Clip = {
-        ...currentClip,
-        title: value.title,
-        content: value.content,
-        // @ts-ignore
-        variant: selectedVariant,
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const isValid = validateForm();
+    if (isValid) {
+      if (currentClip) {
+        const editedClip: Clip = {
+          ...currentClip,
+          title: value.title,
+          content: value.content,
+          // @ts-ignore
+          variant: selectedVariant,
+        }
+        editClip(editedClip)
+        toast("Clip edited", { id: 'edit' })
+      } else {
+        const id = uuidv4();
+        const newClip: Clip = {
+          id: id,
+          title: value.title,
+          content: value.content,
+          // @ts-ignore
+          variant: selectedVariant,
+        }
+        createClip(newClip)
+        toast("Clip created", { id: 'create' })
       }
-      editClip(editedClip)
-      toast("Clip edited", { id: 'edit' })
-    } else {
-      const id = uuidv4();
-      const newClip: Clip = {
-        id: id,
-        title: value.title,
-        content: value.content,
-        // @ts-ignore
-        variant: selectedVariant,
-      }
-      createClip(newClip)
-      toast("Clip created", { id: 'create' })
+      toggleModal()
     }
-    toggleModal()
+  }
+
+  const validateForm = () => {
+    if (selectedVariant === "") {
+      toast.error("Variant is missing", { id: "no-variant" })
+      return false;
+    }
+    if (value.title === "") {
+      toast.error("Title is missing", { id: "no-title" })
+      return false;
+    }
+    if (value.content === "") {
+      toast.error("Content is missing", { id: "no-content" })
+      return false;
+    }
+    return true;
   }
 
   return (

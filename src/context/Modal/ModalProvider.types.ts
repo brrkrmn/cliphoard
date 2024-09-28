@@ -1,7 +1,7 @@
 import { Clip } from "../Clip/ClipProvider.types";
 
 export type ModalContextValue = null | {
-  handleSubmit: () => void;
+  handleSubmit: (e: React.FormEvent) => void;
   currentClip: Clip | null;
   setCurrentClip: (clip: Clip) => void;
   isOpen: boolean;

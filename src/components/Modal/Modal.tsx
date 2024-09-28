@@ -1,4 +1,3 @@
-import toast from "react-hot-toast";
 import { useModalContext } from "../../context/Modal";
 import { ModalType } from "../../context/Modal/ModalProvider.types";
 import VariantList from "../VariantList/VariantList";
@@ -8,21 +7,10 @@ const Modal = () => {
   const { value, onTitleChange, handleSubmit, onContentChange, isOpen, toggleModal, currentClip } = useModalContext();
   const modalType: ModalType = currentClip ? "edit" : "create"
 
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (value.title === "") {
-      toast.error("Title is missing", { id: "no-title" })
-    } else if (value.content === "") {
-      toast.error("Content is missing", { id: "no-content" })
-    } else {
-      handleSubmit()
-    }
-  }
-
   if (isOpen) {
     return (
       <div className="border-2 p-4 pt-[76px] absolute top-0 left-0 w-full h-full backdrop-blur-sm flex items-start justify-center">
-        <form onSubmit={onSubmit} className="section flex-col px-4 justify-between h-full gap-4">
+        <form onSubmit={handleSubmit} className="section flex-col px-4 justify-between h-full gap-4">
           <div className="flex items-center justify-between w-full">
             <h1 className="font-bold text-blue">{modalConstants[modalType].title}</h1>
             <button
