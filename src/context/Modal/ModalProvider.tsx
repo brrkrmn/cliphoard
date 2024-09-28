@@ -10,7 +10,7 @@ export const ModalContext = createContext<ModalContextValue>(null);
 export const useModalContext = () => {
   const context = useContext(ModalContext);
   if (context === null) {
-    throw new Error("You can only call this hook inside CreateClipProvider");
+    throw new Error("You can only call this hook inside ModalProvider");
   }
   return context;
 };
@@ -33,17 +33,14 @@ const ModalProvider = ({ children }: { children: React.ReactNode }) => {
       })
       setSelectedVariant(currentClip.variant)
     } else {
-      resetForm()
+      setValue({ title: '', content: ''})
+      setSelectedVariant("")
+      setCurrentClip(null)
     }
   }, [isOpen, currentClip])
 
   const toggleModal = () => {
     setIsOpen(!isOpen)
-  }
-
-  const resetForm = () => {
-    setValue({ title: '', content: ''})
-    setSelectedVariant("")
   }
 
   const onTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -78,7 +75,6 @@ const ModalProvider = ({ children }: { children: React.ReactNode }) => {
       toast("Clip created", { id: 'create' })
     }
     toggleModal()
-    resetForm()
   }
 
   return (
