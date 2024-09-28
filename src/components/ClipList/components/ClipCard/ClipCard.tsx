@@ -1,15 +1,11 @@
 import toast from "react-hot-toast";
-import { clipVariants } from "../../../../constants";
 import { useClipContext } from "../../../../context/Clip";
 import { Clip } from "../../../../context/Clip/ClipProvider.types";
 import { useModalContext } from "../../../../context/Modal";
 
-
 const ClipCard = ({ clip }: { clip: Clip }) => {
   const { deleteClip } = useClipContext();
   const { toggleModal, setCurrentClip } = useModalContext();
-
-  const clipVariant = clipVariants.find((variant) => variant.type === clip.variant)
 
   const showEditModal = () => {
     toggleModal()
@@ -32,8 +28,8 @@ const ClipCard = ({ clip }: { clip: Clip }) => {
     <div className="group h-14 w-full flex items-center justify-between flex-shrink-0 gap-1">
       <button
         onClick={handleCopy}
-        className={`border-[1px] ${clipVariant?.borderStyle} px-3 rounded-3xl h-full group-hover:w-[80%] transition-all w-full flex items-center gap-2 group-hover:bg-gradient-to-r from-transparent ${clipVariant?.cardStyles} from-30% via-100%`}>
-        <span className={`material-symbols-outlined w-6 h-6 ${clipVariant?.textStyle}`}>{clipVariant?.icon}</span>
+        className={`${clip.variant.cardStyles} border-[1px] px-3 rounded-full h-full group-hover:w-[80%] transition-all w-full flex items-center gap-2 group-hover:bg-gradient-to-r from-transparent from-30% via-100%`}>
+        <span className="material-symbols-outlined w-6 h-6">{clip.variant.icon}</span>
         <div className="flex flex-col items-start justify-center w-[70%]">
           <div className="group-hover:hidden duration-300 text-base text-left font-semibold text-black w-full truncate">
             {clip.title}

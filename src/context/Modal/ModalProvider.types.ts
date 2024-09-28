@@ -1,34 +1,20 @@
+import { Variant } from "../../components/VariantList/VariantList.types";
 import { Clip } from "../Clip/ClipProvider.types";
 
 export type ModalContextValue = null | {
-  handleSubmit: (e: React.FormEvent) => void;
   currentClip: Clip | null;
-  setCurrentClip: (clip: Clip) => void;
   isOpen: boolean;
-  toggleModal: () => void;
-  value: CreateFormValue;
+  value: FormValue;
   selectedVariant: Variant | "";
+  toggleModal: () => void;
+  setCurrentClip: (clip: Clip) => void;
   setSelectedVariant: (value: Variant) => void;
+  handleSubmit: (e: React.FormEvent) => void;
   onTitleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onContentChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export type ModalType = "edit" | "create"
-
-export type Variant = "text" | "password" | "url" | "code";
-
-export type ClipVariant = {
-  type: Variant;
-  borderStyle: string;
-  textStyle: string;
-  bgStyle: string;
-  selectedStyle: string;
-  cardStyles: string;
-  icon: string;
-  inputType: "text" | "password" | "url"
-}
-
-export type CreateFormValue = {
+export type FormValue = {
   title: string;
   content: string;
 }

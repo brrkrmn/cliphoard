@@ -1,7 +1,8 @@
 import { useModalContext } from "../../context/Modal";
-import { ModalType } from "../../context/Modal/ModalProvider.types";
 import VariantList from "../VariantList/VariantList";
 import { modalConstants } from "./constants";
+
+type ModalType = "edit" | "create"
 
 const Modal = () => {
   const { value, onTitleChange, handleSubmit, onContentChange, isOpen, toggleModal, currentClip } = useModalContext();

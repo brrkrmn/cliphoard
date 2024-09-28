@@ -1,9 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { v4 as uuidv4 } from 'uuid';
+import { Variant } from "../../components/VariantList/VariantList.types";
 import { useClipContext } from "../Clip";
 import { Clip } from "../Clip/ClipProvider.types";
-import { CreateFormValue, ModalContextValue, Variant } from "./ModalProvider.types";
+import { FormValue, ModalContextValue } from "./ModalProvider.types";
 
 export const ModalContext = createContext<ModalContextValue>(null);
 
@@ -19,7 +20,7 @@ const ModalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentClip, setCurrentClip] = useState<Clip | null>(null)
   const [selectedVariant, setSelectedVariant] = useState<Variant | "">("");
-  const [value, setValue] = useState<CreateFormValue>({
+  const [value, setValue] = useState<FormValue>({
     title: '',
     content: '',
   })

@@ -1,5 +1,5 @@
-import { clipVariants } from "../../constants"
-import VariantButton from "../VariantButton/VariantButton"
+import VariantButton from "./components/VariantButton/VariantButton"
+import { clipVariants } from "./constants"
 
 const VariantList = () => {
   return (

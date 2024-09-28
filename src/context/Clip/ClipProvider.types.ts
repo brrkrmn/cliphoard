@@ -1,4 +1,4 @@
-import { Variant } from "../Modal/ModalProvider.types";
+import { Variant } from "../../components/VariantList/VariantList.types";
 
 export type ClipContextValue = null | {
   clips: Clip[];
