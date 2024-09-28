@@ -10,7 +10,7 @@ const Modal = () => {
 
   if (isOpen) {
     return (
-      <div className="border-2 p-4 pt-[76px] absolute top-0 left-0 w-full h-full backdrop-blur-sm flex items-start justify-center">
+      <div className="fade-in p-4 pt-[76px] absolute top-0 left-0 w-full h-full backdrop-blur-sm flex items-start justify-center">
         <form onSubmit={handleSubmit} className="section flex-col px-4 justify-between h-full gap-4">
           <div className="flex items-center justify-between w-full">
             <h1 className="font-bold text-blue">{modalConstants[modalType].title}</h1>

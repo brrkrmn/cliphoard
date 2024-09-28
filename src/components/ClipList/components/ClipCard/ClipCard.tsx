@@ -46,7 +46,7 @@ const ClipCard = ({ clip }: { clip: Clip }) => {
           <span className="material-symbols-outlined text-gray transition group-hover:text-white">content_copy</span>
         </div>
       </button>
-      <div className="hidden w-20 group-hover:flex transition-all duration-300 delay-500 items-center justify-center">
+      <div className="invisible w-0 opacity-0 group-hover:opacity-100 group-hover:visible group-hover:w-20 flex transition-all items-center justify-center">
         <button
           data-microtip-position="bottom"
           role="tooltip"
