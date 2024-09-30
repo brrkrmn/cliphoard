@@ -4,7 +4,7 @@
   "description": "",
   "main": "background.js",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "rimraf dist && webpack --mode production",
     "watch": "webpack --watch"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.0",
     "postcss-loader": "^8.1.1",
+    "rimraf": "^6.0.1",
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.10",
     "ts-loader": "^9.5.1",
